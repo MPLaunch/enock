@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  @font-face{font-family:"Anton";src:url("assets/fonts/anton-400.woff2") format("woff2")}
+  @font-face{font-family:"ISerif";font-style:italic;src:url("assets/fonts/instrumentserif-400-italic.woff2") format("woff2")}
+  @font-face{font-family:"SG";font-weight:600;src:url("assets/fonts/spacegrotesk-600.woff2") format("woff2")}
+  *{margin:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden;background:#0A0A0B}
+  .wrap{position:relative;width:1200px;height:630px}
+  .glow{position:absolute;right:6%;top:50%;width:820px;height:820px;transform:translateY(-50%);
+    background:radial-gradient(circle,rgba(255,194,30,.42),rgba(255,150,0,.16) 34%,transparent 62%);filter:blur(8px)}
+  .cut{position:absolute;right:2%;bottom:0;height:640px;
+    filter:drop-shadow(0 30px 50px rgba(0,0,0,.6));
+    -webkit-mask-image:linear-gradient(to bottom,#000 88%,transparent)}
+  .copy{position:absolute;left:78px;top:0;height:630px;display:flex;flex-direction:column;justify-content:center;z-index:2}
+  .kick{font-family:"SG";font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:#FFC21E;margin-bottom:14px}
+  .name{font-family:"Anton";font-size:210px;line-height:.82;letter-spacing:.01em;
+    background:linear-gradient(180deg,#fffbe9,#ffe6a0 44%,#E29A00);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tag{font-family:"ISerif";font-style:italic;font-size:38px;color:#F6F1E4;margin-top:20px}
+  .tag b{color:#FFC21E;font-weight:400}
+</style></head><body><div class="wrap">
+  <div class="glow"></div>
+  <img class="cut" src="assets/enock.webp">
+  <div class="copy">
+    <div class="kick">Content Creator · UGC · Collabs</div>
+    <div class="name">ENOCK</div>
+    <div class="tag">Studying law. Making content. <b>Building a name.</b></div>
+  </div>
+</div></body></html>
