@@ -92,10 +92,10 @@
     })();
   }
 
-  /* ---------- 5. boot ---------- */
+  /* ---------- 5. boot (scripts are deferred: DOM is parsed & libs are loaded here) ---------- */
   function boot() { showHero(); initMotion(); initMouse(); }
-  if (document.readyState === "complete") boot();
-  else window.addEventListener("load", boot);
-  // safety: if CDNs never load, make sure hero is visible
-  setTimeout(function () { if (cut && getComputedStyle(cut).opacity === "0") cut.style.opacity = 1; }, 2500);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  // safety net: never leave the hero hidden, whatever happens
+  setTimeout(function () { if (cut && getComputedStyle(cut).opacity === "0") cut.style.opacity = 1; }, 1800);
 })();
