@@ -59,16 +59,14 @@
         window.gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
         window.gsap.ticker.lagSmoothing(0);
       }
-      // hero parallax on scroll
+      // hero parallax on scroll (scrub:0.5 = smoothing, so it never hard-syncs to every scroll tick)
       window.gsap.to(".hero__cut", { yPercent: -12, ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.5 } });
       window.gsap.to(".hero__name", { yPercent: 22, ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-      window.gsap.to(".hero__glow", { yPercent: 30, scale: 1.15, ease: "none",
-        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-      // about cutout drift
-      window.gsap.fromTo(".about__cut", { yPercent: 8 }, { yPercent: -8, ease: "none",
-        scrollTrigger: { trigger: ".about", start: "top bottom", end: "bottom top", scrub: true } });
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.5 } });
+      // translate-only (no scale) so the blurred glow layer is moved, not re-rasterised every frame
+      window.gsap.to(".hero__glow", { yPercent: 30, ease: "none",
+        scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 0.5 } });
     }
   }
 
